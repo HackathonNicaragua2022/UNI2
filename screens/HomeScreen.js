@@ -3,13 +3,16 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { colors } from "../colors";
 import CardItem from "../components/CardItem";
 import Header from "../components/Header";
+import CardItemRutas from "../components/CardItemRutas";
 
-const HomeScreen = (navigation) => {
+const HomeScreen = ({ navigation }) => {
   const styles = makeStyles(colors);
   return (
     <View style={styles.container}>
-      <Header tittleHeader={"Rutas"} />
-      <Text style={styles.title}>aqui va la actividad de cada ruta</Text>
+      <Header tittleHeader={"Rutas"} navigation={navigation} />
+      <CardItemRutas tittleCard={"Ruta 5"} navigation={navigation} />
+      <CardItemRutas tittleCard={"Ruta 6"} navigation={navigation} />
+      <CardItemRutas tittleCard={"Ruta 7"} navigation={navigation} />
     </View>
   );
 };
@@ -17,14 +20,10 @@ const HomeScreen = (navigation) => {
 const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
-      backgroundColor: colors.azulClaro,
-    },
-    title: {
       alignItems: "center",
-      justifyContent: "center",
+      justifyContent: "flex-start",
       display: "flex",
-      fontSize: 20,
-      padding: "20%",
+      backgroundColor: colors.naranja,
       height: "100%",
     },
   });

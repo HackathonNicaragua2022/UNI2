@@ -3,13 +3,12 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { colors } from "../colors";
 import CardItem from "../components/CardItem";
 import Header from "../components/Header";
-import Bottom from "../components/Bottom";
 
 const SettingScreen = ({ navigation }) => {
   const styles = makeStyles(colors);
   return (
     <View style={styles.container}>
-      <Header tittleHeader={"Avisos"} />
+      <Header tittleHeader={"Avisos"} navigation={navigation} />
       <CardItem
         tittleCard={"Administrador"}
         subTittleCard={"Aviso Importante"}
@@ -37,7 +36,7 @@ const makeStyles = (color) => {
       alignItems: "center",
       justifyContent: "flex-start",
       display: "flex",
-      backgroundColor: colors.azul,
+      backgroundColor: colors.naranja,
       height: "100%",
     },
   });

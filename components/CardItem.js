@@ -19,9 +19,9 @@ const makeStyles = (color) => {
       alignItems: "center",
       justifyContent: "center",
       display: "flex",
-      backgroundColor: colors.aquaMarina,
+      backgroundColor: colors.blanco,
+      marginBottom: 20,
       marginVertical: "5%",
-      marginHorizontal: "5%",
       borderRadius: 12,
       height: "20%",
       width: "80%",
@@ -38,7 +38,6 @@ const makeStyles = (color) => {
     },
     bodyStyle: {
       fontSize: 12,
-      fontStyle: "italic",
       paddingLeft: 5,
     },
   });

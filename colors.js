@@ -10,4 +10,6 @@ export const colors = {
   amarillo: "#f0811c",
   azul: "#4174A2",
   blanco: "#fff",
+  amarillo: "#fbbc39",
+  naranja: "#f0811c",
 };

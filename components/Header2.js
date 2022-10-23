@@ -2,17 +2,13 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { colors } from "../colors";
 import Bottom from "./Bottom";
+import Bottom2 from "./Bottom2";
 
-export default function ({ tittleHeader, navigation }) {
+export default function ({ tittleHeader }) {
   const styles = makeStyles(colors);
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyle}>{tittleHeader}</Text>
-      <Bottom
-        onPress={() => {
-          navigation.navigate("config");
-        }}
-      />
+      <Bottom2 style={styles.container} />
     </View>
   );
 }
@@ -21,12 +17,10 @@ const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
       display: "flex",
-      flexDirection: "row",
       alignItems: "center",
-      justifyContent: "space-around",
-      height: "10%",
-      width: "100%",
-      paddingTop: 40,
+      justifyContent: "center",
+      width: "20%",
+      height: "100%",
       backgroundColor: colors.naranja,
     },
 
