@@ -12,7 +12,7 @@ const MapsScreen = () => {
           marginTop: "20%",
         }}
       >
-        aqui va el mapa
+        aqui va el mapa xd
       </Text>
     </View>
   );

@@ -7,5 +7,7 @@ export const colors = {
   beige: "#f5f5dc",
   negro: "#000",
   rojo: "#e84b1b",
-  amarillo:"#f0811c"
+  amarillo: "#f0811c",
+  azul: "#4174A2",
+  blanco: "#fff",
 };

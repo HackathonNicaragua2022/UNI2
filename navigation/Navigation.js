@@ -5,6 +5,7 @@ import HomeScreen from "../screens/HomeScreen";
 import SettingScreen from "../screens/SettingScreens";
 import MapsScreen from "../screens/MapsScreen";
 
+
 const Tab = createBottomTabNavigator();
 
 function Mytabs() {
@@ -16,10 +17,24 @@ function Mytabs() {
       <Tab.Screen
         name="EstadoRutas"
         component={HomeScreen}
-      
+        options={{
+          headerShown: false,
+        }}
       />
-      <Tab.Screen name="Mapa" component={MapsScreen} />
-      <Tab.Screen name="Avisos" component={SettingScreen} />
+      <Tab.Screen
+        name="Mapa"
+        component={MapsScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="Avisos"
+        component={SettingScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Tab.Navigator>
   );
 }
