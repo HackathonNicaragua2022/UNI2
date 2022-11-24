@@ -19,7 +19,7 @@ const HomeScreen = ({ navigation }) => {
       <FlatList
         data={tittle}
         renderItem={({ item, index }) => (
-          <CardItemRutas tittleCard={item.tittle} />
+          <CardItemRutas tittleCard={item.tittle} navigation={navigation} />
         )}
       />
     </View>
