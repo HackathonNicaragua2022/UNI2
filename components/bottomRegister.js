@@ -1,38 +1,37 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import { colors } from "../colors";
 import { useFonts } from "expo-font";
 
-export default function ({ tittleHeader }) {
+export default function ({ onPress }) {
   const styles = makeStyles(colors);
-
   const [fontsLoaded] = useFonts({
     Montserrat: require("../assets/fonts/Montserrat-Regular.otf"),
   });
 
   if (fontsLoaded) {
     return (
-      <View style={styles.container}>
-        <Text style={styles.textStyle}>{tittleHeader}</Text>
-      </View>
+      <TouchableOpacity onPress={onPress} style={styles.container}>
+        <Text style={styles.tittle}>Registrarse</Text>
+      </TouchableOpacity>
     );
   }
 }
-
 const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
       alignItems: "center",
       justifyContent: "center",
-      width: "100%",
-      height: "8%",
-      backgroundColor: colors.naranja,
-      paddingTop: 30,
+      height: "20%",
+      width: "60%",
+      backgroundColor: colors.blanco,
+      borderWidth: 1,
+      borderRadius: 28,
     },
 
-    textStyle: {
-      fontSize: 30,
-      color: colors.blanco,
+    tittle: {
+      fontSize: 28,
+      color: colors.morado,
       fontFamily: "Montserrat",
     },
   });

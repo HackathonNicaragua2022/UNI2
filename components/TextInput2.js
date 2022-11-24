@@ -4,7 +4,7 @@ import { colors } from "../colors";
 export default function () {
   const styles = makeStyles(colors);
   return (
-    <View style={{ width: "80%" }}>
+    <View style={{ width: "45%" }}>
       <TextInput style={styles.container}></TextInput>
     </View>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { colors } from "../colors";
 import { useFonts } from "expo-font";
 
@@ -28,7 +28,7 @@ const makeStyles = (color) => {
 
     bottomContainer: {
       height: "100%",
-      backgroundColor: colors.rojo,
+      backgroundColor: colors.morado,
       alignItems: "center",
       justifyContent: "center",
       width: "45%",

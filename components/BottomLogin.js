@@ -1,9 +1,9 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import { colors } from "../colors";
 import { useFonts } from "expo-font";
 
-export default function ({ tittleHeader }) {
+export default function ({ onPress, tittle }) {
   const styles = makeStyles(colors);
 
   const [fontsLoaded] = useFonts({
@@ -12,26 +12,25 @@ export default function ({ tittleHeader }) {
 
   if (fontsLoaded) {
     return (
-      <View style={styles.container}>
-        <Text style={styles.textStyle}>{tittleHeader}</Text>
-      </View>
+      <TouchableOpacity style={styles.container}>
+        <Text style={styles.tittle}>{tittle}</Text>
+      </TouchableOpacity>
     );
   }
 }
-
 const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
       alignItems: "center",
       justifyContent: "center",
-      width: "100%",
-      height: "8%",
-      backgroundColor: colors.naranja,
-      paddingTop: 30,
+      height: "22%",
+      width: "60%",
+      backgroundColor: colors.morado,
+      borderRadius: 18,
     },
 
-    textStyle: {
-      fontSize: 30,
+    tittle: {
+      fontSize: 28,
       color: colors.blanco,
       fontFamily: "Montserrat",
     },

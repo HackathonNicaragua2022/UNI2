@@ -1,14 +1,24 @@
+import Header2 from "../components/Header2";
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { colors } from "../colors";
-import CardItem from "../components/CardItem";
-import Header from "../components/Header";
+import CardItemConfig from "../components/cardItemConfig";
+import CardItemNotis from "../components/CardItemNotis";
+import BottomPoliticas from "../components/BottomPoliticas";
+import BottomPreguntas from "../components/BottomPreguntas";
 
 const SettingScreen = ({ navigation }) => {
   const styles = makeStyles(colors);
+
   return (
     <View style={styles.container}>
-      <Text>ola mundo</Text>
+      <CardItemConfig
+        tittleCard={"Cuenta Ruta"}
+        navigation={navigation}
+      ></CardItemConfig>
+      <CardItemNotis></CardItemNotis>
+      <BottomPoliticas></BottomPoliticas>
+      <BottomPreguntas></BottomPreguntas>
     </View>
   );
 };
@@ -17,7 +27,7 @@ const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
       height: "100%",
-      color: colors.naranja,
+      backgroundColor: colors.naranja,
       alignItems: "center",
     },
   });

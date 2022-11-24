@@ -1,17 +1,70 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import * as React from "react";
+import * as Location from "expo-location";
+import { View, StyleSheet } from "react-native";
 import { colors } from "../colors";
-import Bottom2 from "../components/Bottom2";
-import Header from "../components/Header";
 import Header2 from "../components/Header2";
-import MapView from "react-native-maps";
+import MapView, { Marker, Polyline } from "react-native-maps";
 
+const rutaImage = require("../assets/autobus-escolar-3.png");
+const userImage = require("../assets/persona-2.png");
 const MapsScreen = ({ navigation }) => {
   const styles = makeStyles();
+  const [origin, setOrigin] = React.useState({
+    latitude: 12.102492,
+    longitude: -85.3687,
+  });
+
+  const [destination, setDestination] = React.useState({
+    latitude: 12.103593,
+    longitude: -85.375625,
+  });
+
+  React.useEffect(() => {
+    getLocationPermision();
+  }, []);
+
+  async function getLocationPermision() {
+    let { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== "granted") {
+      alert("permiso denegado");
+      return;
+    }
+
+    let location = await Location.getCurrentPositionAsync();
+    const current = {
+      latitude: location.coords.latitude,
+      longitude: location.coords.longitude,
+    };
+    setOrigin(current);
+  }
   return (
     <View style={styles.container}>
-      <Header tittleHeader={"INFOROUTE"} navigation={navigation} />
-      <MapView style={styles.mapview} />
+      <Header2 tittleHeader={"Mapas"} />
+
+      <MapView
+        style={styles.mapview}
+        initialRegion={{
+          latitude: origin.latitude,
+          longitude: origin.longitude,
+          latitudeDelta: 0.01,
+          longitudeDelta: 0.019,
+        }}
+      >
+        <Marker
+          draggable={false}
+          coordinate={origin}
+          image={userImage}
+          onDragEnd={(direction) => setOrigin(direction.nativeEvent.coordinate)}
+        />
+        <Marker
+          draggable={true}
+          coordinate={destination}
+          image={rutaImage}
+          onDragEnd={(direction) =>
+            setDestination(direction.nativeEvent.coordinate)
+          }
+        />
+      </MapView>
     </View>
   );
 };
@@ -24,24 +77,8 @@ const makeStyles = (color) => {
       backgroundColor: colors.naranja,
       height: "100%",
     },
-    containerButtons: {
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "center",
-      height: "10%",
-      width: "100%",
-      paddingTop: 40,
-      backgroundColor: colors.rojo,
-    },
-
-    styleBottom: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
     mapview: {
-      height: "90%",
+      height: "100%",
       width: "100%",
     },
   });

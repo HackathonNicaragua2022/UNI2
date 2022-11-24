@@ -20,10 +20,8 @@ export default function ({ tittleHeader, navigation }) {
 const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
-      display: "flex",
       flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "space-around",
+      justifyContent: "flex-end",
       height: "10%",
       width: "100%",
       paddingTop: 40,
@@ -33,7 +31,7 @@ const makeStyles = (color) => {
     textStyle: {
       fontSize: 35,
       color: colors.blanco,
-      paddingLeft: 120,
+      paddingRight: 80,
     },
   });
 };

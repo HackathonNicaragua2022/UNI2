@@ -1,15 +1,8 @@
 export const colors = {
-  aliceAzul: "#f0f8ff",
-  blancoAntiguo: "#faebd7",
-  aqua: "#00ffff",
-  aquaMarina: "#7fffd4",
-  azulClaro: "#f0ffff",
-  beige: "#f5f5dc",
   negro: "#000",
-  rojo: "#e84b1b",
-  amarillo: "#f0811c",
+  rojo: "#E84B1B",
   azul: "#4174A2",
   blanco: "#fff",
-  amarillo: "#fbbc39",
   naranja: "#f0811c",
+  morado: "#444697",
 };

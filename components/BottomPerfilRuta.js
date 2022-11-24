@@ -7,9 +7,9 @@ export default function ({ onPress }) {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
       <Image
-        source={require("../assets/settingsblanco.png")}
+        source={require("../assets/cuadro.png")}
         resizeMode={"contain"}
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "140%" }}
       />
     </TouchableOpacity>
   );
@@ -17,9 +17,10 @@ export default function ({ onPress }) {
 const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
-      height: "75%",
-      width: "20%",
-      paddingLeft: 30,
+      alignItems: "center",
+      height: "8%",
+      width: "30%",
+      marginLeft: "25%",
     },
   });
 };

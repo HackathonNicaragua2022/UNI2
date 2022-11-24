@@ -1,18 +1,27 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 import { colors } from "../colors";
-import CardItem from "../components/CardItem";
-import Header from "../components/Header";
 import CardItemRutas from "../components/CardItemRutas";
 
 const HomeScreen = ({ navigation }) => {
   const styles = makeStyles(colors);
+
+  const tittle = [
+    { tittle: "Ruta 5" },
+    { tittle: "Ruta 6" },
+    { tittle: "Ruta 7" },
+    { tittle: "Ruta 8" },
+    { tittle: "Ruta 9" },
+  ];
+
   return (
     <View style={styles.container}>
-      <Header tittleHeader={"Rutas"} navigation={navigation} />
-      <CardItemRutas tittleCard={"Ruta 5"} navigation={navigation} />
-      <CardItemRutas tittleCard={"Ruta 6"} navigation={navigation} />
-      <CardItemRutas tittleCard={"Ruta 7"} navigation={navigation} />
+      <FlatList
+        data={tittle}
+        renderItem={({ item, index }) => (
+          <CardItemRutas tittleCard={item.tittle} />
+        )}
+      />
     </View>
   );
 };
@@ -20,9 +29,6 @@ const HomeScreen = ({ navigation }) => {
 const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
-      alignItems: "center",
-      justifyContent: "flex-start",
-      display: "flex",
       backgroundColor: colors.naranja,
       height: "100%",
     },

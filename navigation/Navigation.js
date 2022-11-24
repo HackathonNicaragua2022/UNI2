@@ -6,6 +6,10 @@ import SettingScreen from "../screens/SettingScreens";
 import ConfigScreen from "../screens/ConfigScreen";
 import MapsScreen from "../screens/MapsScreen";
 import { createStackNavigator } from "@react-navigation/stack";
+import { colors } from "../colors";
+import RegistroScreen from "../screens/RegistroScreen";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 const stack = createStackNavigator();
@@ -22,10 +26,38 @@ function SettingNavigation() {
       />
       <stack.Screen
         options={{
-          headerShown: false,
+          headerStyle: {
+            backgroundColor: colors.naranja,
+          },
+          headerTintColor: colors.blanco,
+          headerTitleStyle: {
+            fontSize: 33,
+          },
+          headerBackTitleStyle: {
+            fontSize: 25,
+          },
+          headerTitle: "Ajustes",
+          headerBackTitle: "Avisos",
         }}
         name="config"
         component={ConfigScreen}
+      />
+      <stack.Screen
+        name="registro"
+        component={RegistroScreen}
+        options={{
+          headerStyle: {
+            backgroundColor: colors.naranja,
+          },
+          headerTintColor: colors.blanco,
+          headerTitleStyle: {
+            fontSize: 33,
+          },
+          headerBackTitleStyle: {
+            fontSize: 25,
+          },
+          headerTitle: "Registro",
+        }}
       />
     </stack.Navigator>
   );
@@ -39,13 +71,6 @@ function MapsNavigation() {
         }}
         name="maps"
         component={MapsScreen}
-      />
-      <stack.Screen
-        options={{
-          headerShown: false,
-        }}
-        name="config"
-        component={ConfigScreen}
       />
     </stack.Navigator>
   );
@@ -82,13 +107,36 @@ function Mytabs() {
   return (
     <Tab.Navigator
       initialRouteName="Mapa"
-      screenOptions={{ tabBarActiveTintColor: "#e84b1b" }}
+      screenOptions={{
+        tabBarActiveBackgroundColor: colors.blanco,
+        tabBarInactiveBackgroundColor: colors.naranja,
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          backgroundColor: colors.naranja,
+        },
+        tabBarIconStyle: {
+          marginTop: 10,
+        },
+      }}
     >
       <Tab.Screen
         name="EstadoRutas"
         component={HomeNavigation}
         options={{
-          headerShown: false,
+          tabBarIcon: ({ size, color }) => (
+            <FontAwesome5 name="bus-alt" size={34} color={colors.rojo} />
+          ),
+          headerStyle: {
+            backgroundColor: colors.naranja,
+          },
+          headerTintColor: colors.blanco,
+          headerTitleStyle: {
+            fontSize: 33,
+          },
+          headerBackTitleStyle: {
+            fontSize: 25,
+          },
+          headerTitle: "Registro",
         }}
       />
       <Tab.Screen
@@ -96,6 +144,9 @@ function Mytabs() {
         component={MapsNavigation}
         options={{
           headerShown: false,
+          tabBarIcon: ({ size, color }) => (
+            <FontAwesome5 name="route" size={32} color={colors.rojo} />
+          ),
         }}
       />
       <Tab.Screen
@@ -103,6 +154,9 @@ function Mytabs() {
         component={SettingNavigation}
         options={{
           headerShown: false,
+          tabBarIcon: ({ size, color }) => (
+            <MaterialIcons name="bus-alert" size={34} color={colors.rojo} />
+          ),
         }}
       />
     </Tab.Navigator>

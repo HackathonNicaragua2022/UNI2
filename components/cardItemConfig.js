@@ -1,9 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { colors } from "../colors";
+import BottomLogin from "./BottomLogin";
+import BottomRegister from "./bottomRegister";
 import { useFonts } from "expo-font";
 
-export default function ({ tittleCard, subTittleCard, body }) {
+export default function ({ tittleCard, navigation }) {
   const styles = makeStyles(colors);
   const [fontsLoaded] = useFonts({
     Montserrat: require("../assets/fonts/Montserrat-Regular.otf"),
@@ -13,8 +15,12 @@ export default function ({ tittleCard, subTittleCard, body }) {
     return (
       <View style={styles.container}>
         <Text style={styles.titleStyle}>{tittleCard}</Text>
-        <Text style={styles.subtitleStyle}>{subTittleCard}</Text>
-        <Text style={styles.bodyStyle}> {body} </Text>
+        <BottomRegister
+          onPress={() => {
+            navigation.navigate("registro");
+          }}
+        />
+        <BottomLogin tittle={"Iniciar Sesión"} />
       </View>
     );
   }
@@ -23,29 +29,16 @@ const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
       alignItems: "center",
-      justifyContent: "flex-start",
+      justifyContent: "space-around",
       backgroundColor: colors.blanco,
-      marginVertical: "5%",
-      borderRadius: 18,
-      height: "23%",
-      width: "82%",
+      borderRadius: 28,
+      height: "30%",
+      width: "80%",
+      marginTop: 30,
     },
     titleStyle: {
-      fontSize: 28,
+      fontSize: 35,
       color: colors.rojo,
-      marginTop: 12,
-      fontFamily: "Montserrat",
-    },
-    subtitleStyle: {
-      fontSize: 24,
-      paddingTop: 10,
-      color: colors.negro,
-      fontFamily: "Montserrat",
-    },
-    bodyStyle: {
-      fontSize: 15,
-      paddingLeft: 5,
-      paddingTop: 10,
       fontFamily: "Montserrat",
     },
   });
