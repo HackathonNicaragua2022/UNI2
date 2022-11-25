@@ -1,6 +1,10 @@
 import React from "react";
 import { StyleSheet, TouchableOpacity, Image } from "react-native";
 import { colors } from "../colors";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 export default function ({ onPress }) {
   const styles = makeStyles(colors);
@@ -17,9 +21,9 @@ export default function ({ onPress }) {
 const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
-      height: "75%",
-      width: "20%",
-      paddingLeft: 30,
+      height: hp("5%"),
+      width: wp("9%"),
+      marginRight: wp(5),
     },
   });
 };

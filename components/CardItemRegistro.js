@@ -6,6 +6,10 @@ import TextInput2 from "./TextInput2";
 import BottomPerfilRuta from "./BottomPerfilRuta";
 import BottomLogin from "./BottomLogin";
 import { useFonts } from "expo-font";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 export default function ({
   tittleCard1,
@@ -42,9 +46,9 @@ export default function ({
 
         <View
           style={{
-            width: "100%",
+            width: wp("70%"),
             flexDirection: "row",
-            justifyContent: "space-around",
+            justifyContent: "center",
           }}
         >
           <TextInput2 />
@@ -52,9 +56,7 @@ export default function ({
         </View>
         <Text style={styles.titleStyle3}>{tittleCard7}</Text>
         <BottomPerfilRuta />
-        <View
-          style={{ height: "35%", width: "99%", marginTop: 30, marginLeft: 35 }}
-        >
+        <View style={{ height: "35%", width: "99%", marginLeft: 35 }}>
           <BottomLogin tittle={"Registrarse"} />
         </View>
       </View>
@@ -67,33 +69,33 @@ const makeStyles = (color) => {
       alignItems: "baseline",
       justifyContent: "flex-start",
       backgroundColor: colors.blanco,
-      borderRadius: 28,
-      height: "93%",
-      width: "80%",
-      marginTop: 30,
-      paddingLeft: 40,
+      borderRadius: 50,
+      height: hp("73%"),
+      width: wp("85%"),
+      marginTop: hp("2%"),
+      paddingLeft: wp("10%"),
     },
     titleStyle: {
-      fontSize: 30,
+      fontSize: hp("3%"),
       color: colors.rojo,
       paddingLeft: 20,
-      paddingTop: 20,
+      paddingTop: 10,
       fontFamily: "Montserrat",
     },
 
     titleStyle2: {
       color: colors.rojo,
-      paddingTop: 25,
-      fontSize: 30,
+      paddingTop: 10,
+      fontSize: hp("3%"),
       paddingVertical: 10,
       marginHorizontal: 10,
       fontFamily: "Montserrat",
     },
     titleStyle3: {
-      fontSize: 30,
+      fontSize: hp("3%"),
       color: colors.rojo,
       paddingLeft: 50,
-      paddingTop: 15,
+      paddingTop: 10,
       fontFamily: "Montserrat",
     },
   });

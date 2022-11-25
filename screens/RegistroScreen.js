@@ -1,7 +1,11 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { colors } from "../colors";
 import CardItemRegistro from "../components/CardItemRegistro";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 const RegistroScreen = ({ navigation }) => {
   const styles = makeStyles(colors);
@@ -24,7 +28,7 @@ const RegistroScreen = ({ navigation }) => {
 const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
-      height: "100%",
+      height: hp("90%"),
       backgroundColor: colors.naranja,
       alignItems: "center",
     },

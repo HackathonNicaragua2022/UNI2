@@ -4,6 +4,10 @@ import Bottom2 from "./Bottom2";
 import { colors } from "../colors";
 import Bottom3 from "./Bottom3";
 import { useFonts } from "expo-font";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 export default function ({ tittleCard, navigation }) {
   const styles = makeStyles(colors);
@@ -15,11 +19,16 @@ export default function ({ tittleCard, navigation }) {
     return (
       <View style={styles.container}>
         <Text style={styles.titleStyle}>{tittleCard}</Text>
+        <Image
+          source={require("../assets/Ruta.png")}
+          resizeMode={"contain"}
+          style={{ width: wp(50), height: hp("12%"), marginTop: hp(0.1) }}
+        />
         <View
           style={{
             flexDirection: "row",
-            height: "18%",
-            width: "98%",
+            height: hp("4.6%"),
+            width: wp("80%"),
             justifyContent: "space-evenly",
           }}
         >
@@ -36,12 +45,6 @@ export default function ({ tittleCard, navigation }) {
             tittleCard={"Información"}
           />
         </View>
-
-        <Image
-          source={require("../assets/Ruta.png")}
-          resizeMode={"contain"}
-          style={{ width: "70%", height: "50%", marginTop: 10 }}
-        />
       </View>
     );
   }
@@ -52,12 +55,12 @@ const makeStyles = (color) => {
       alignItems: "center",
       backgroundColor: colors.blanco,
       borderRadius: 18,
-      height: "80%%",
-      width: "90%",
-      marginLeft: 10,
+      height: hp("24%"),
+      width: wp("80%"),
+      marginVertical: hp(1),
     },
     titleStyle: {
-      fontSize: 35,
+      fontSize: hp(4),
       color: colors.rojo,
       fontFamily: "Montserrat",
     },

@@ -1,7 +1,11 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import { colors } from "../colors";
 import { useFonts } from "expo-font";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 export default function ({ onPress, tittleCard }) {
   const styles = makeStyles(colors);
@@ -21,17 +25,17 @@ export default function ({ onPress, tittleCard }) {
 const makeStyles = (color) => {
   return StyleSheet.create({
     title: {
-      fontSize: 20,
+      fontSize: hp(2),
       color: colors.blanco,
       fontFamily: "Montserrat",
     },
 
     bottomContainer: {
-      height: "100%",
+      height: hp("4.4%"),
       backgroundColor: colors.morado,
       alignItems: "center",
       justifyContent: "center",
-      width: "45%",
+      width: wp("34%"),
       borderRadius: 18,
     },
   });

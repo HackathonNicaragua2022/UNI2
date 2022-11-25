@@ -1,22 +1,22 @@
-import Header2 from "../components/Header2";
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { colors } from "../colors";
 import CardItemConfig from "../components/cardItemConfig";
 import CardItemNotis from "../components/CardItemNotis";
 import BottomPoliticas from "../components/BottomPoliticas";
 import BottomPreguntas from "../components/BottomPreguntas";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 const SettingScreen = ({ navigation }) => {
   const styles = makeStyles(colors);
 
   return (
     <View style={styles.container}>
-      <CardItemConfig
-        tittleCard={"Cuenta Ruta"}
-        navigation={navigation}
-      ></CardItemConfig>
-      <CardItemNotis></CardItemNotis>
+      <CardItemConfig tittleCard={"Cuenta Ruta"} navigation={navigation} />
+      <CardItemNotis />
       <BottomPoliticas></BottomPoliticas>
       <BottomPreguntas></BottomPreguntas>
     </View>
@@ -26,7 +26,7 @@ const SettingScreen = ({ navigation }) => {
 const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
-      height: "100%",
+      height: hp("100%"),
       backgroundColor: colors.naranja,
       alignItems: "center",
     },

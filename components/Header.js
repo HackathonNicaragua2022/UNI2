@@ -2,6 +2,10 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { colors } from "../colors";
 import Bottom from "./Bottom";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 export default function ({ tittleHeader, navigation }) {
   const styles = makeStyles(colors);
@@ -22,16 +26,16 @@ const makeStyles = (color) => {
     container: {
       flexDirection: "row",
       justifyContent: "flex-end",
-      height: "10%",
-      width: "100%",
-      paddingTop: 40,
+      height: hp("9%"),
+      width: wp("100%"),
+      paddingTop: hp(4),
       backgroundColor: colors.naranja,
     },
 
     textStyle: {
-      fontSize: 35,
+      fontSize: hp(4),
       color: colors.blanco,
-      paddingRight: 80,
+      paddingRight: wp(24),
     },
   });
 };

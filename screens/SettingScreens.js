@@ -1,9 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { colors } from "../colors";
 import CardItem from "../components/CardItem";
 import Header from "../components/Header";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 const SettingScreen = ({ navigation }) => {
   const styles = makeStyles(colors);
@@ -49,13 +53,13 @@ const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
       backgroundColor: colors.naranja,
-      height: "100%",
-      paddingLeft: 10,
+      height: hp("100%"),
+      paddingLeft: wp(1),
     },
 
     scroll: {
       alignItems: "center",
-      justifyContent: "space-between",
+      height: hp(115),
     },
   });
 };

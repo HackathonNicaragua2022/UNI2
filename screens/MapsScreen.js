@@ -2,8 +2,11 @@ import * as React from "react";
 import * as Location from "expo-location";
 import { View, StyleSheet } from "react-native";
 import { colors } from "../colors";
-import Header2 from "../components/Header2";
-import MapView, { Marker, Polyline } from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 const rutaImage = require("../assets/autobus-escolar-3.png");
 const userImage = require("../assets/persona-2.png");
@@ -39,8 +42,6 @@ const MapsScreen = ({ navigation }) => {
   }
   return (
     <View style={styles.container}>
-      <Header2 tittleHeader={"Mapas"} />
-
       <MapView
         style={styles.mapview}
         initialRegion={{
@@ -78,8 +79,8 @@ const makeStyles = (color) => {
       height: "100%",
     },
     mapview: {
-      height: "100%",
-      width: "100%",
+      height: hp("100%"),
+      width: wp("100%"),
     },
   });
 };

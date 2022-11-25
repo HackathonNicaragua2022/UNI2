@@ -2,7 +2,10 @@ import React from "react";
 import { View, StyleSheet, FlatList } from "react-native";
 import { colors } from "../colors";
 import CardItemRutas from "../components/CardItemRutas";
-
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 const HomeScreen = ({ navigation }) => {
   const styles = makeStyles(colors);
 
@@ -30,7 +33,9 @@ const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
       backgroundColor: colors.naranja,
-      height: "100%",
+      height: hp("90%"),
+      justifyContent: "center",
+      alignItems: "center",
     },
   });
 };

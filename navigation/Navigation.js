@@ -10,6 +10,10 @@ import { colors } from "../colors";
 import RegistroScreen from "../screens/RegistroScreen";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 const Tab = createBottomTabNavigator();
 const stack = createStackNavigator();
@@ -113,9 +117,11 @@ function Mytabs() {
         tabBarShowLabel: false,
         tabBarStyle: {
           backgroundColor: colors.naranja,
+          height: hp("8%"),
+          width: wp(100),
         },
         tabBarIconStyle: {
-          marginTop: 10,
+          marginTop: hp(0.5),
         },
       }}
     >
@@ -128,13 +134,11 @@ function Mytabs() {
           ),
           headerStyle: {
             backgroundColor: colors.naranja,
+            height: hp("10%"),
           },
           headerTintColor: colors.blanco,
           headerTitleStyle: {
             fontSize: 33,
-          },
-          headerBackTitleStyle: {
-            fontSize: 25,
           },
           headerTitle: "Registro",
         }}
@@ -143,7 +147,15 @@ function Mytabs() {
         name="Mapa"
         component={MapsNavigation}
         options={{
-          headerShown: false,
+          headerStyle: {
+            backgroundColor: colors.naranja,
+            height: hp("10%"),
+          },
+          headerTintColor: colors.blanco,
+          headerTitleStyle: {
+            fontSize: 33,
+          },
+          headerTitle: "Mapa",
           tabBarIcon: ({ size, color }) => (
             <FontAwesome5 name="route" size={32} color={colors.rojo} />
           ),
