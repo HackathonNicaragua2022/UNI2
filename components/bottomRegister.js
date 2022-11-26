@@ -16,7 +16,7 @@ export default function ({ onPress }) {
   if (fontsLoaded) {
     return (
       <TouchableOpacity onPress={onPress} style={styles.container}>
-        <Text style={styles.tittle}>Registrarse</Text>
+        <Text style={styles.tittle}>Iniciar Sesión</Text>
       </TouchableOpacity>
     );
   }

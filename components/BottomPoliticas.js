@@ -16,7 +16,7 @@ export default function ({ onPress }) {
 
   if (fontsLoaded) {
     return (
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={onPress}>
         <Text style={styles.tittle}>Políticas y privacidad</Text>
       </TouchableOpacity>
     );

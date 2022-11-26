@@ -17,8 +17,8 @@ const SettingScreen = ({ navigation }) => {
     <View style={styles.container}>
       <CardItemConfig tittleCard={"Cuenta Ruta"} navigation={navigation} />
       <CardItemNotis />
-      <BottomPoliticas></BottomPoliticas>
-      <BottomPreguntas></BottomPreguntas>
+      <BottomPoliticas />
+      <BottomPreguntas />
     </View>
   );
 };

@@ -24,7 +24,6 @@ export default function ({ tittleCard, navigation }) {
             navigation.navigate("registro");
           }}
         />
-        <BottomLogin tittle={"Iniciar Sesión"} />
       </View>
     );
   }

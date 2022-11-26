@@ -53,7 +53,7 @@ export default function ({ tittleCard1, navigation, tittleCard2 }) {
           onChangeText={(text) => setPasword(text)}
         ></TextInput>
         <BottomLogin
-          tittle={"Registrarse"}
+          tittle={"Iniciar Sesión"}
           onPress={() => {
             perfilRuta();
           }}
@@ -81,6 +81,9 @@ const makeStyles = (color) => {
       width: wp(65),
       borderRadius: 28,
       borderColor: "gray",
+      fontSize: hp(1.5),
+      fontFamily: "Montserrat",
+      textAlign: "center",
     },
     titleStyle: {
       fontSize: hp("3%"),

@@ -5,4 +5,5 @@ export const colors = {
   blanco: "#fff",
   naranja: "#f0811c",
   morado: "#444697",
+  amarilloSecundario: "#eea01a",
 };
