@@ -40,7 +40,7 @@ export default function ({ tittleCard, navigation }) {
           />
           <Bottom3
             onPress={() => {
-              navigation.navigate("map");
+              navigation.navigate("Info");
             }}
             tittleCard={"Información"}
           />

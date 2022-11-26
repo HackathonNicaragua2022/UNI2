@@ -6,6 +6,8 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+
+
 export default function ({ onPress, tittle }) {
   const styles = makeStyles(colors);
 
@@ -15,7 +17,7 @@ export default function ({ onPress, tittle }) {
 
   if (fontsLoaded) {
     return (
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} onPress={onPress}>
         <Text style={styles.tittle}>{tittle}</Text>
       </TouchableOpacity>
     );
@@ -25,11 +27,12 @@ const makeStyles = (color) => {
   return StyleSheet.create({
     container: {
       alignItems: "center",
-      justifyContent: "center",
-      height: hp("5%"),
-      width: wp("60%"),
       backgroundColor: colors.morado,
       borderRadius: 18,
+      height: hp("5%"),
+      justifyContent: "center",
+      marginTop: hp(4),
+      width: wp("60%"),
     },
 
     tittle: {

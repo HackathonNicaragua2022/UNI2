@@ -5,6 +5,7 @@ import HomeScreen from "../screens/HomeScreen";
 import SettingScreen from "../screens/SettingScreens";
 import ConfigScreen from "../screens/ConfigScreen";
 import MapsScreen from "../screens/MapsScreen";
+import StackScreen from "../screens/StackScreen";
 import { createStackNavigator } from "@react-navigation/stack";
 import { colors } from "../colors";
 import RegistroScreen from "../screens/RegistroScreen";
@@ -14,6 +15,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import AvisosScreen from "../screens/AvisosScreen";
 
 const Tab = createBottomTabNavigator();
 const stack = createStackNavigator();
@@ -35,10 +37,10 @@ function SettingNavigation() {
           },
           headerTintColor: colors.blanco,
           headerTitleStyle: {
-            fontSize: 33,
+            fontSize: hp(4),
           },
           headerBackTitleStyle: {
-            fontSize: 25,
+            fontSize: hp(3),
           },
           headerTitle: "Ajustes",
           headerBackTitle: "Avisos",
@@ -55,10 +57,27 @@ function SettingNavigation() {
           },
           headerTintColor: colors.blanco,
           headerTitleStyle: {
-            fontSize: 33,
+            fontSize: hp(4),
           },
           headerBackTitleStyle: {
-            fontSize: 25,
+            fontSize: hp(3),
+          },
+          headerTitle: "Registro",
+        }}
+      />
+      <stack.Screen
+        name="ads"
+        component={AvisosScreen}
+        options={{
+          headerStyle: {
+            backgroundColor: colors.naranja,
+          },
+          headerTintColor: colors.blanco,
+          headerTitleStyle: {
+            fontSize: hp(4),
+          },
+          headerBackTitleStyle: {
+            fontSize: hp(3),
           },
           headerTitle: "Registro",
         }}
@@ -71,7 +90,15 @@ function MapsNavigation() {
     <stack.Navigator>
       <stack.Screen
         options={{
-          headerShown: false,
+          headerStyle: {
+            backgroundColor: colors.naranja,
+            height: hp("10%"),
+          },
+          headerTintColor: colors.blanco,
+          headerTitleStyle: {
+            fontSize: hp(4),
+          },
+          headerTitle: "Mapa",
         }}
         name="maps"
         component={MapsScreen}
@@ -84,7 +111,15 @@ function HomeNavigation() {
     <stack.Navigator>
       <stack.Screen
         options={{
-          headerShown: false,
+          headerStyle: {
+            backgroundColor: colors.naranja,
+            height: hp("10%"),
+          },
+          headerTintColor: colors.blanco,
+          headerTitleStyle: {
+            fontSize: hp(4),
+          },
+          headerTitle: "Rutas",
         }}
         name="home"
         component={HomeScreen}
@@ -102,6 +137,21 @@ function HomeNavigation() {
         }}
         name="map"
         component={MapsNavigation}
+      />
+      <stack.Screen
+        options={{
+          headerStyle: {
+            backgroundColor: colors.naranja,
+            height: hp("10%"),
+          },
+          headerTintColor: colors.blanco,
+          headerTitleStyle: {
+            fontSize: hp(4),
+          },
+          headerTitle: "Información",
+        }}
+        name="Info"
+        component={StackScreen}
       />
     </stack.Navigator>
   );
@@ -132,30 +182,14 @@ function Mytabs() {
           tabBarIcon: ({ size, color }) => (
             <FontAwesome5 name="bus-alt" size={34} color={colors.rojo} />
           ),
-          headerStyle: {
-            backgroundColor: colors.naranja,
-            height: hp("10%"),
-          },
-          headerTintColor: colors.blanco,
-          headerTitleStyle: {
-            fontSize: 33,
-          },
-          headerTitle: "Registro",
+          headerShown: false,
         }}
       />
       <Tab.Screen
         name="Mapa"
         component={MapsNavigation}
         options={{
-          headerStyle: {
-            backgroundColor: colors.naranja,
-            height: hp("10%"),
-          },
-          headerTintColor: colors.blanco,
-          headerTitleStyle: {
-            fontSize: 33,
-          },
-          headerTitle: "Mapa",
+          headerShown: false,
           tabBarIcon: ({ size, color }) => (
             <FontAwesome5 name="route" size={32} color={colors.rojo} />
           ),
